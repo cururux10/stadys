@@ -1,0 +1,2 @@
+# stadys
+private stady
