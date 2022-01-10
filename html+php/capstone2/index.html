@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<?php
+session_start();
+?>
+<head>
+	<!-- templatemo 419 black white -->
+    <!-- 
+    Black White
+    http://www.templatemo.com/preview/templatemo_419_black_white
+    -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+	<title>Home</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+
+	<link href="bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="templatemo_style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<ul class="nav justify-content-end">
+
+        <?
+        if (isset($_SESSION['userId'])) {
+            echo "{$_SESSION['userId']}님 환영합니다  ";
+        ?>
+            <li class="nav-item d-flex align-items-center" onclick="logout()">로그아웃</li>
+        <?
+        } else {
+        ?>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="signup.php">회원가입 </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="login.php">로그인</a>
+            </li>
+
+        <?
+        }
+        ?>
+    </ul>
+    <script>
+        function logout() {
+            console.log("hello");
+            const data = confirm("로그아웃 하시겠습니까?");
+            if (data) {
+                location.href = "logoutProcess.php";
+            }
+
+        }
+    </script>
+	<div class="templatemo-logo visible-xs-block">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 black-bg logo-left-container">
+			<h1 class="logo-left">Fire Detection</h1>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg logo-right-container">
+			<h1 class="logo-right">Streaming App</h1>
+		</div>			
+	</div>
+	<div class="templatemo-container">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 black-bg left-container">
+			<h1 class="logo-left hidden-xs margin-bottom-60">Fire Detection</h1>	
+			<div class="tm-left-inner-container">
+				<ul class="nav nav-stacked templatemo-nav">
+				  <!-- <li><a href="http://localhost:8080/index">Home</a></li> -->			  
+
+				  <li><a href="http://localhost:8080/index.html">Home</a></li>
+				  <!-- <li><a href="http://localhost:8080/index_map.html">Map</a></li> -->
+
+				  
+				</ul>
+			</div>
+		</div> <!-- left section -->
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 white-bg right-container">
+			<h1 class="logo-right hidden-xs margin-bottom-60">Streaming App</h1>	
+			<div class="tm-right-inner-container">
+
+				<h1 class="templatemo-header"></h1>
+
+				<!-- 				
+	
+				<img src="{% static 'images/ocst.jpg' %}" alt="ocst" class="img-thumbnail"> -->
+		
+				<article class="templatemo-item">
+					<h2>Camera</h2>
+
+					 <p>
+					 <img src="https://d7f1-211-204-45-232.ngrok.io" alt="">
+					 <!--<img src="http://localhost:8090" alt="" >-->
+					 </p>
+					 
+					 <h3>Map</h3>
+					<style type="text/css">
+					/* Set the size of the div element that contains the map */
+      					#map {
+					height: 400px;
+					/* The height is 400 pixels */
+					width: 100%;
+					/* The width is the width of the web page */
+				      }
+				    </style>
+					<script>
+					      // Initialize and add the map
+					      function initMap() {
+						// The location of Uluru
+						const uluru = { lat: 36.344, lng: 127.036 };
+						// The map, centered at Uluru
+						const map = new google.maps.Map(document.getElementById("map"), {
+						  zoom: 7,
+						  center: uluru,
+						});
+						// The marker, positioned at Uluru
+						const marker = new google.maps.Marker({
+						  position: uluru,
+						  map: map,
+						});
+					      }
+					    </script>
+					    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlFK9zmzYtQpUL2Kn4xagyhqfXodNL2pU&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+				</article><hr>
+
+				<footer>
+					<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 templatemo-copyright">Copyright &copy; 2021 Doyeol <!-- Credit: www.templatemo.com --></p>
+					</br>
+					
+
+				</footer>
+			</div>	
+		</div> <!-- right section -->
+	</div>	
+</body>
+</html>
