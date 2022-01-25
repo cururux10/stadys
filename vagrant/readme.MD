@@ -39,7 +39,9 @@ ssh-keygen -t rsa -C "이메일 주소"
 이와 같이 나오며 키이름과 비밀번호를 입력해 달라고 나오고 생성완료시 개인키와 공용키가 한쌍으로 생성된다.
 
 homestaed dir의 homestead.yaml을 열어(메모장 비주얼코드 관계없음)
+
 ![주석 2022-01-25 150258](https://user-images.githubusercontent.com/51111836/150920181-6b502f2c-4d42-4c35-a51b-0110a5eba30c.png)
+
 
 위에서 부터 ip는 호스트 ip로 중요하니 기억해 두자
 
@@ -59,6 +61,7 @@ folders는 실제로 파일이 공유되는 부분으로 초기에 ~/code로 되
 의 형식이다.
 
 그냥 막입력한다고 연결되는 것은 아니다. 연결할 host가 존재해야하므로  윈도우의 경우 C:\Windows\System32\drivers\etc\hosts의 파일을 열어 다음과 같이 등록해주어야한다.
+
 ![주석 2022-01-25 151857](https://user-images.githubusercontent.com/51111836/150921886-951b0dd8-52f8-457f-9da5-97042f55e7c0.png)
 
 #부분은 주석처리부분이고 실제로 사용되는 부분은 가장 끝 2줄이다.
