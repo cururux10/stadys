@@ -61,7 +61,71 @@ folders는 실제로 파일이 공유되는 부분으로 초기에 ~/code로 되
 의 형식이다.
 
 그냥 막입력한다고 연결되는 것은 아니다. 연결할 host가 존재해야하므로  윈도우의 경우 C:\Windows\System32\drivers\etc\hosts의 파일을 열어 다음과 같이 등록해주어야한다.
+맥의 경우 etc/hosts라고 한다. 직접해보지 않아서 확실하지 않다.
 
 ![주석 2022-01-25 151857](https://user-images.githubusercontent.com/51111836/150921886-951b0dd8-52f8-457f-9da5-97042f55e7c0.png)
 
 #부분은 주석처리부분이고 실제로 사용되는 부분은 가장 끝 2줄이다.
+
+그리고 보다시피 호스트 ip는 여기서 사용됨을 알 수 있다.
+
+여기까지 하면 기본 준비가 끝난 것이다. 이제 실제로 가동해 볼것인데
+
+가동 명령어는
+vagrant up      //실행
+vagrant suspend //일시정지
+vagrant halt    //종료
+이고 추가로 SSH연결을 해야 비로소 연결이되는데 이것의 명령어는 2개로
+vagrant ssh
+
+ssh vagrant@"호스트 ip" (여기서는 ssh vagrant@192.168.56.56)
+
+이다
+
+이를 한번에 bat파일로 묶을 수 있는데
+메모장이든 vscode든 아무것이나 사용하여 [파일명].bat의 형식으로 만들어주고
+
+내용은
+
+@ECHO ON                      //커멘드 입력부분의 현제 디렉토리를 표시할 것인이 여부로 없어도 된다
+cd c:\Users\sjlee\homestead   //현제 자신이 homestead를 지정해둔 dir로 이동하는 명령어
+vagrant up                    //실행
+vagrant ssh                   //ssh 입력
+
+으로 채우면 된다.
+
+이것의 실행은 call명령어로 실행하며 call [파일명].bat의 형식이다.
+
+실행에 성공하면 다음과 같이 나온다
+
+![주석 2022-01-25 154240](https://user-images.githubusercontent.com/51111836/150925053-9639441f-4153-4743-a9af-628cf2fd7481.png)
+
+여기서 부터는 ubuntu기반으로 가동되고 있으므로 리눅스 명령어를 사용하면 된다.
+이제 새로운 프로잭트를 생성하고 싶다면 다음 명령어를 치면 설치하며 생성되는데 
+그 전에 code dir로 이동하고 생성해주자 homestead.yaml파일에서 위치지정을 home/vagrant/code로 해두었기 때문이다
+
+laravel new [생성하고자하는 프로잭트명] (예시 laravel new testset)
+
+이렇게 명령어를 쳐주면 설치를 시작하며 설치가 완료되면 다음과 같이 프로잭트가 생성된다.
+
+![주석 2022-01-25 155301](https://user-images.githubusercontent.com/51111836/150926223-3820c73a-f24e-484f-9415-d084560e30be.png)
+
+
+dir 내부는 이렇게 구성되어있다.
+
+![주석 2022-01-25 155440](https://user-images.githubusercontent.com/51111836/150926425-14a72cdf-f5d6-41d1-8a2c-1cb3ae4e7689.png)
+
+이제 npm를 install할 것인데 오류가 생길 수 있다. npm install 명령어를 사용할 것인데 지금환경에서는 이처럼 오류가 난다.
+
+![주석 2022-01-25 155700](https://user-images.githubusercontent.com/51111836/150926782-e176f859-e06c-432d-b209-620e624a7edd.png)
+
+이 현상의 원인은 VM box의 보안상의 이유로 shared folder 에 대해 symbolic link를 지원하지 않기 때문인데
+
+이를 해결하기위해 다음과 같이 옵션을 변경해 줄것이다. 
+alias npm='npm --no-bin-links $*'
+
+이 옵션은 심볼릭 링크를 제거하는 옵션이다.
+
+![주석 2022-01-25 160424](https://user-images.githubusercontent.com/51111836/150927584-5cb3b19b-8981-471b-97f6-2c56aeaf6844.png)
+
+이렇게 된다.
