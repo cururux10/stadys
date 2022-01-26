@@ -1,2 +1,2 @@
 root secret
-vagrant secret
+homestead secret
