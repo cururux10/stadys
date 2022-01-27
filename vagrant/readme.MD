@@ -87,10 +87,10 @@ ssh vagrant@"호스트 ip" (여기서는 ssh vagrant@192.168.56.56)
 
 내용은
 
-@ECHO ON                      //커멘드 입력부분의 현제 디렉토리를 표시할 것인이 여부로 없어도 된다
-cd c:\Users\sjlee\homestead   //현제 자신이 homestead를 지정해둔 dir로 이동하는 명령어
-vagrant up                    //실행
-vagrant ssh                   //ssh 입력
+@ECHO ON                      //커멘드 입력부분의 현제 디렉토리를 표시할 것인이 여부로 없어도 된다<br>
+cd c:\Users\sjlee\homestead   //현제 자신이 homestead를 지정해둔 dir로 이동하는 명령어<br>
+vagrant up                    //실행<br>
+vagrant ssh                   //ssh 입력<br>
 
 으로 채우면 된다.
 
