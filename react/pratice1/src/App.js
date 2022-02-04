@@ -4,6 +4,7 @@ import Data from './data.js';
 import { Link, Route, Switch } from 'react-router-dom';
 import Detail from './Detail';
 import axios from 'axios';
+import Cart from './Cart.js';
 
 function App() {
 
@@ -89,6 +90,9 @@ function App() {
         }}>더보기</button>
         </Route>
       </Switch>
+      <Route path="/Cart">
+        <Cart></Cart>
+      </Route>
     </div>
   );
 }
