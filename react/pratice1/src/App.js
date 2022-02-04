@@ -3,6 +3,7 @@ import './App.css';
 import Data from './data.js';
 import { Link, Route, Switch } from 'react-router-dom';
 import Detail from './Detail';
+import axios from 'axios';
 
 function App() {
 
@@ -56,12 +57,36 @@ function App() {
             }
           </div>
         </div>
+        <button class="btn btn-primary" onClick={()=>{
+          axios.get('https://codingapple1.github.io/shop/data2.json')
+          .then((result)=>{
+            setshoes([...shoes,...result.data])
+           })
+          .catch(()=>{
+
+           })
+        }}>더보기</button>
         </Route>
         <Route exact path="/detail/:id">
             <Detail shoes={shoes}/>
         </Route>
-        <Route path="/:id">
-            <div>!!!!!!!!!</div>
+        <Route path="/detail">
+        <div class="row">
+            {
+              shoes.map((a,i)=>{
+                return <Card shoes={shoes[i]} i={i} key={i}/>
+              })
+            }
+          </div>
+          <button class="btn btn-primary" onClick={()=>{
+          axios.get('https://codingapple1.github.io/shop/data2.json')
+          .then((result)=>{
+            setshoes([...shoes,...result.data])
+           })
+          .catch(()=>{
+
+           })
+        }}>더보기</button>
         </Route>
       </Switch>
     </div>
@@ -71,7 +96,9 @@ function App() {
 function Card(props){
   return(
     <div class="col-md-4">
-      <img src={ 'https://codingapple1.github.io/shop/shoes' + (props.i+1) + '.jpg'} width='100%'/>
+      <Link to={'/detail/'+props.i}>
+        <img src={ 'https://codingapple1.github.io/shop/shoes' + (props.i+1) + '.jpg'} width='100%'/>
+      </Link>
       <h4>{props.shoes.title}</h4>
       <p>{props.shoes.content} & {props.shoes.price}</p>
     </div>

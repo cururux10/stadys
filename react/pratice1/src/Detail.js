@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useHistory,useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import styled from 'styled-components';
@@ -13,9 +14,11 @@ function Detail(props){
     })
 
     useEffect(()=>{
-     let 타이머 = setTimeout(() => {setalart(false)}, 2000);
-     return ()=>{clearTimeout(타이머)}
-    },[alert]);
+
+
+        let 타이머 = setTimeout(() => {setalart(false)}, 2000);
+        return ()=>{clearTimeout(타이머)}
+    },[]);
 
 
     return (
