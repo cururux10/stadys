@@ -4,7 +4,7 @@ $메인칼라 : #ff0000;
     color : $메인칼라;
 }
 
-@mixin 함수() {
+@mixin 함수() { //scss의 경우 이와 같이 스타일자체를 함수로 지정하여 저장할수있다. 겹치는 부분을 이를 이용하여 동시에 변경이 가능하다
     background : #eeeeee;
     padding : 15px;
     border-radius : 5px;
@@ -13,11 +13,11 @@ $메인칼라 : #ff0000;
     margin : auto;
 }
 .my-alert {
-    @include 함수()
+    @include 함수() //불러올때는 include를 사용하여 불러온다
 }
 
 .my-alert2 {
-    @extend .my-alert;
+    @extend .my-alert; //다른 스타일을 가져올 수도 있으며 그때는 extend를 사용하여가져온다
     background : yellow;
 }
 
