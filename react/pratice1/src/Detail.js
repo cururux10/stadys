@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import './Detail.scss'
 import {Nav} from 'react-bootstrap'
 import {CSSTransition} from 'react-transition-group'
+import {connect} from 'react-redux';
 
 function Detail(props){
     let [alart,setalart] = useState(true);
@@ -45,7 +46,10 @@ function Detail(props){
                     <h4 className="pt-5">{founditem.title}</h4>
                     <p>{founditem.content}</p>
                     <p>{founditem.price}원</p>
-                    <button className="btn btn-danger">주문하기</button> 
+                    <button className="btn btn-danger"onClick={()=>{
+                        props.dispatch( {type:'항목추가',데이터 : {id : founditem.id, name : founditem.title, quan : 1}} );
+                        history.push('/cart')
+                        }} >주문하기</button> 
                     <button className="btn btn-danger" onClick={()=>{
                         history.goBack();
                     }}>뒤로가기</button> 
@@ -93,4 +97,12 @@ function TabContent(props){
 
 
 }
-export default Detail
+function state를props화(state){
+    return {
+      state : state.reducer,
+      alert열렸니 : state.reducer2
+    }
+  }
+  
+  export default connect(state를props화)(Detail)
+  

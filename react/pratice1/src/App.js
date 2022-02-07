@@ -5,6 +5,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Detail from './Detail';
 import axios from 'axios';
 import Cart from './Cart.js';
+import { useHistory,useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
 
@@ -25,6 +26,9 @@ function App() {
               </li>
               <li class="nav-item">
                 <a class="nav-link"><Link to="/Detail">Detail</Link></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"><Link to="/cart">Cart</Link></a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -98,11 +102,10 @@ function App() {
 }
 
 function Card(props){
+  let history = useHistory();
   return(
-    <div class="col-md-4">
-      <Link to={'/detail/'+props.i}>
-        <img src={ 'https://codingapple1.github.io/shop/shoes' + (props.i+1) + '.jpg'} width='100%'/>
-      </Link>
+    <div class="col-md-4" onClick={()=>{history.push('/detail/'+props.shoes.id)}}>
+      <img src={ 'https://codingapple1.github.io/shop/shoes' + (props.i+1) + '.jpg'} width='100%'/>
       <h4>{props.shoes.title}</h4>
       <p>{props.shoes.content} & {props.shoes.price}</p>
     </div>

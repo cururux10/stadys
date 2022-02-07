@@ -2,45 +2,47 @@ import React from "react";
 import { Table } from "react-bootstrap";
 import {connect} from 'react-redux';
 
-function Cart(){
+function Cart(props){
     return(
         <div>
             <Table striped bordered hover>
-                <thead>
-                    <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    </tr>
-                    <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <td>3</td>
-                    <td colSpan={2}>Larry the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <td>id</td>
+                    <td>Name</td>
+                    <td>quan</td>
+                    <td>#</td>
+                </tr>
+                {
+                    props.state.map((a,i)=>{
+                        return(
+                            <tr key={i}>
+                                <td>{a.id}</td>
+                                <td>{a.name}</td>
+                                <td>{a.quan}</td>
+                                <td>
+                                    <button onClick={()=>{props.dispatch({type: '수량증가', data : i})}}> + </button>
+                                    <button onClick={()=>{props.dispatch({type: '수량감소', data : i})}}> - </button>
+                                </td>
+                            </tr>
+                        )
+                    })
+                }  
             </Table>
+            { props.alert_open === true
+                ? (<div className="my-alert2">
+                        <p>지금 구매하시면 20% 할인</p>
+                        <button onClick={()=>{props.dispatch({type : 'alert닫기'})}}>닫기</button>
+                   </div> )
+            : null
+            }
         </div>
     )
 }
 
 function getstore(state){
     return{
-        
+        state : state.reducer,
+        alert_open: state.reducer2
     }
 }
 
