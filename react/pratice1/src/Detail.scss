@@ -12,7 +12,8 @@ $메인칼라 : #ff0000;
     transition: all 500ms;
 }
 
-@mixin 함수() {
+//스타일을 함수처럼 저장이 가능하다
+@mixin 함수() { 
     background : #eeeeee;
     padding : 15px;
     border-radius : 5px;
@@ -20,12 +21,12 @@ $메인칼라 : #ff0000;
     width : 100%;
     margin : auto;
 }
-.my-alert {
-    @include 함수()
+.my-alert { 
+    @include 함수() //호출시에는 include와 함수호출방식으로 호출한다
 }
 
-.my-alert2 {
-    @extend .my-alert;
+.my-alert2 { 
+    @extend .my-alert; //다른 스타일을 불러와 적용시키는 것도 가능하다.
     background : yellow;
 }
 
