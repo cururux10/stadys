@@ -29,12 +29,12 @@ function App() {
             </span>
           </footer>
         </div>
-        <div className="table">
+        <div className="table_content">
           <div className="search_bar">
             <img src="img\팰리즈소개.png"></img>
             <img src="img\search_box.png"></img>
           </div>
-          <table className="data-table">
+          <table>
             <thead>
               <tr>
                 <th>번호</th>
