@@ -5,11 +5,9 @@
   background-color: #fff;
 }
 .main_content{
-  width: 1200px;
   display:flex
 }
 header{
-  width: 1200px;
   display:flex;
   justify-content: space-between;
 }
