@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from './main';
+import Main from './component/menu.js';
+
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Routes>
-          <Route path="/" name="Home" element={<Main />} />
-        </Routes>
+        <Main/>
       </BrowserRouter>
     )
   }

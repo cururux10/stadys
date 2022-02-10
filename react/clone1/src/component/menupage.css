@@ -1,0 +1,44 @@
+.table_content {
+    width: 1000px;
+    height: 1056px;
+    margin-top: 16.7px;
+    float:right;
+    position:relative;
+  }
+  .search_bar{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 119px;
+    margin-bottom: 30px;
+  }
+  .menu_btn{
+    width: 130px;
+    height: 40px;
+    float: left;
+  }
+  table{
+    width: 100%;
+    border: 1px;
+    border-collapse: collapse;
+    color: #b2b2b1;
+  }
+  th{
+    padding: 10px;
+    border-color: #f1f1f1;
+    border-width: 1px;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-top: hidden;
+  }
+  .g_btn{
+    width: 75px;
+    height: 25px;
+    margin: 19.5px 18.5px 0px 18.5px;
+  }
+  .b_btn{
+    width: 129px;
+    height: 40px;
+    margin: 155px 40px 0px 0px;
+    float: right;
+  }
+  
