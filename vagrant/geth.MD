@@ -43,3 +43,20 @@ http로 모든 사용자가 계정을 엑세스 할수 있게 되어<br>
 테스트할때만 사용하길 권장.<br>
 
 &	실행 명령어 끝에 위치하며 백그라운드 모드 수행.<br>
+
+
+
+geth 콘솔 명령어 <br>
+
+계정 생성<br>
+personal.newAccount(“pass00”)<br>
+코인 베이스 처음 생성한 계정으로 자동으로 연결된다.<br>
+eth.coinbase<br>
+계정이 가진 잔액 확인 인수에 eth.account[0]를 넣으면 현재 계정의 주소값을 반환해주는 것이다<br>
+eth.getBalance(“0x95d02ef6f14f7b8a4c162dbc0aa64043cad86a75”)<br>
+채굴시작 인수는 수행할 쓰레드의 수<br>
+miner.start(1)<br>
+채굴정지 바로 정지되지 않을경우 아직 진행중인 프로세스가 있어서 그렇다<br>
+miner.stop() <br>
+
+
