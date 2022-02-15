@@ -88,8 +88,8 @@ footer {
   letter-spacing: normal;
   text-align: left;
   color: #9e9e9e;
+  text-decoration:none
 }
-
 .admin_box {
   width: 200px;
   height: 45px;
@@ -108,6 +108,7 @@ footer {
   letter-spacing: normal;
   text-align: left;
   color: #9e9e9e;
+  text-decoration:none
 }
 .table_content {
   width: 1000px;

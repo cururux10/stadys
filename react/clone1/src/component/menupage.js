@@ -17,7 +17,7 @@ function menupage() {
                 <img className='g_btn' src='img/gray_btn.png'/>
                 <img className='g_btn' src='img/gray_btn.png'/>
             </div>
-            <img className='b_btn' src='img/blue_btn.png'/>
+            <img className='b_btn' src='/img/blue_btn.png'/>
         </div>
     )
 }

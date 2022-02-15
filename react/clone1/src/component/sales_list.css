@@ -11,8 +11,8 @@
   margin-top: 119px;
   margin-bottom: 30px;
 }
-.busi_btn{
-  width: 200px;
+.sales_btn{
+  width: 180px;
   height: 40px;
   border-radius: 5px;
   background-color: #a93fff;
@@ -31,10 +31,4 @@ td{
 }
 .img_text{
   margin-left: 10px;
-}
-.regi_b_btn{
-  width: 220px;
-  height: 40px;
-  margin: 50px 40px 0px 0px;
-  float: right;
 }

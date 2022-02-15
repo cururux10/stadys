@@ -1,17 +1,17 @@
-import './business.css';
+import './sales_list.css';
 import {Link} from 'react-router-dom';
 
-function business(){
+function sales_list(){
     return (
         <div className='table_content'>
             <div className="search_bar">
-                <button className='busi_btn'>Business registration List</button>
+                <button className='sales_btn'>Sales registration List</button>
             </div>
             <table>
                 <tr>
                     <th>NAME</th>
-                    <th>BUSINESS NAME</th>
-                    <th>APPLICATION DATE</th>
+                    <th>TITLE</th>
+                    <th>QUANTITY</th>
                     <th>INFO</th>
                 </tr>
                 <tr>
@@ -27,9 +27,8 @@ function business(){
                     <td><Link to='info'><img src='img/viewmore.png'/></Link></td>
                 </tr>
             </table>
-            <Link to='registration'><img className='regi_b_btn' src='img/business_regi.png'/></Link>
         </div>
     )
 }
 
-export default business;
+export default sales_list;
