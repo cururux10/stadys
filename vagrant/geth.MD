@@ -6,7 +6,9 @@
 4. sudo apt-get install -y build-essential golang 이 명령어를 입력해서 필수 라이브러리를 다운받고<br>
 5. make all로 빌드를 하도록한다.<br>
 6. build/bin으로 이동하여 geth version을 입력하여 다음고 같이 나오면 성공<br>
+
 ![1_ZPtLmnkh_lRFVNdmCjSV2w](https://user-images.githubusercontent.com/51111836/153562976-db256734-348b-4a9d-9bfa-b95c0c64e035.png)
+
 7. 여기서 바로 나가지말고 pwd로 현재 경로를 기억해두고 cd로 메인으로 나가서 .bash_profile의 내용에<br>
   GETH=/home/blockchain/ethereum/go-ethereum <br>
   PATH="$PATH:$GETH/build/bin"                <br>
