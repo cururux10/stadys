@@ -27,3 +27,20 @@ create<br>
 
 addacount<br>
 ![accountadd](https://user-images.githubusercontent.com/51111836/156987135-969df7cd-3420-4b40-af11-44dc341d881d.png)
+
+
+계정추가에는 실제로 github계정이 필요하다. OAuth인증을 사용하면 접속되어있는 github계정으로 연결되며연결을 누르면 추가완료이다.
+
+
+
+
+레포지트리를 열면다음과 같이 화면이 나오는데<br>
+![repomain](https://user-images.githubusercontent.com/51111836/156988556-b369e53f-1551-4eca-9983-b280653033d2.png)
+
+
+git에 대한 기본 지식이 있다는 것을 배경으로 설명하면 이름그대로의 기능들이다.<br>
+커밋,pull,push,patch,브랜치,병합은 매우 익숙한 기능이므로 설명을 생략하겠다.<br>
+
+
+
+
