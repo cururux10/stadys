@@ -15,3 +15,5 @@ https://docs.microsoft.com/ko-kr/azure/developer/go/configure-visual-studio-code
 
 
 3번부터 동일하게 진행
+
+모두 진행하는 중에 컴파일오류가 발생할 수 있음 vscode의 확정이 부족해서 그런것이다 설치해주자
